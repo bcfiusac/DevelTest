@@ -1,0 +1,288 @@
+{
+	"info": {
+		"_postman_id": "f1f00383-462d-4297-a168-b8daad8bddd5",
+		"name": "DevelEncuestas",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "CreaToken",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\"Username\": \"Devel\", \"Password\": \"Devel\"}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://localhost:44398/api/login",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "44398",
+					"path": [
+						"api",
+						"login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "NuevaEncuesta",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCIsImN0eSI6IkpXVCJ9.eyJodHRwOi8vc2NoZW1hcy54bWxzb2FwLm9yZy93cy8yMDA1LzA1L2lkZW50aXR5L2NsYWltcy9uYW1laWRlbnRpZmllciI6IkRldmVsIiwiZXhwIjoxNjUzMzQ0OTU5LCJpc3MiOiJodHRwczovL2xvY2FsaG9zdDo0NDM5OC8iLCJhdWQiOiJodHRwczovL2xvY2FsaG9zdDo0NDM5OC8ifQ.1rxwmAUIQI2VyZPD8PVXGLs6OV4sVmNra_W59ofHJN8",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n\r\n    \"Nombre\":\"Encuesta 12\",\r\n    \"Descripcion\":\"Primera encuesta para el servicio de Devel\",\r\n    \"Campos\":[\r\n                {\r\n                    \"NombreCampo\":\"Edad\",\r\n                    \"TituloCampo\":\"Edad de la persona\",\r\n                    \"EsRequerido\":\"S\",\r\n                    \"tipoCampo\":\"number\"\r\n                    },\r\n                {\r\n                    \"NombreCampo\":\"Nombre\",\r\n                    \"TituloCampo\":\"Nombre completo de la persona\",\r\n                    \"EsRequerido\":\"S\",\r\n                    \"tipoCampo\":\"text\"\r\n                    },\r\n                {\r\n                \"NombreCampo\":\"DPI\",\r\n                \"TituloCampo\":\"Documento personal de identificacion\",\r\n                \"EsRequerido\":\"S\",\r\n                \"tipoCampo\":\"text\"\r\n                }\r\n            ]\r\n    \r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://localhost:44398/api/user/nuevaencuesta",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "44398",
+					"path": [
+						"api",
+						"user",
+						"nuevaencuesta"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "EliminarEncuesta",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCIsImN0eSI6IkpXVCJ9.eyJodHRwOi8vc2NoZW1hcy54bWxzb2FwLm9yZy93cy8yMDA1LzA1L2lkZW50aXR5L2NsYWltcy9uYW1laWRlbnRpZmllciI6IkRldmVsIiwiZXhwIjoxNjUzMzQ0OTU5LCJpc3MiOiJodHRwczovL2xvY2FsaG9zdDo0NDM5OC8iLCJhdWQiOiJodHRwczovL2xvY2FsaG9zdDo0NDM5OC8ifQ.1rxwmAUIQI2VyZPD8PVXGLs6OV4sVmNra_W59ofHJN8",
+							"type": "string"
+						}
+					]
+				},
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"Nombre\": \"daniel\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://localhost:44398/api/user/eliminarencuesta",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "44398",
+					"path": [
+						"api",
+						"user",
+						"eliminarencuesta"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "ActualizarEncuesta",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCIsImN0eSI6IkpXVCJ9.eyJodHRwOi8vc2NoZW1hcy54bWxzb2FwLm9yZy93cy8yMDA1LzA1L2lkZW50aXR5L2NsYWltcy9uYW1laWRlbnRpZmllciI6IkRldmVsIiwiZXhwIjoxNjUzMzQ0OTU5LCJpc3MiOiJodHRwczovL2xvY2FsaG9zdDo0NDM5OC8iLCJhdWQiOiJodHRwczovL2xvY2FsaG9zdDo0NDM5OC8ifQ.1rxwmAUIQI2VyZPD8PVXGLs6OV4sVmNra_W59ofHJN8",
+							"type": "string"
+						}
+					]
+				},
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"Nombre\":\"Encuesta 12\",\r\n    \"NuevoNombre\":\"daniel\",\r\n    \"Descripcion\":\"Primera encuesta para el webservice de Devel\",\r\n    \"NuevaDescripcion\":\"edicion de la encuesta\",\r\n    \"Campos\":[\r\n                {\r\n                    \"NombreCampo\":\"Edad\",\r\n                    \"TituloCampo\":\"Edad de la persona\",\r\n                    \"EsRequerido\":\"S\",\r\n                    \"tipoCampo\":\"Number\"\r\n                    },\r\n                {\r\n                    \"NombreCampo\":\"Nombre\",\r\n                    \"TituloCampo\":\"Nombre completo de la persona\",\r\n                    \"EsRequerido\":\"S\",\r\n                    \"tipoCampo\":\"Text\"\r\n                    },\r\n                    {\r\n                    \"NombreCampo\":\"DPINIT\",\r\n                    \"TituloCampo\":\"Documento personal de identificacion\",\r\n                    \"EsRequerido\":\"S\",\r\n                    \"tipoCampo\":\"Text\"\r\n                    }\r\n            ]\r\n    \r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://localhost:44398/api/user/actualizarencuesta",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "44398",
+					"path": [
+						"api",
+						"user",
+						"actualizarencuesta"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "CrearRespuesta",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n\r\n    \"Nombre\":\"Encuesta 12\",\r\n    \"Campos\":[\r\n                {\r\n                    \"NombreCampo\":\"Edad\",\r\n                    \"Respuesta\":\"27\"\r\n                    },\r\n                {\r\n                    \"NombreCampo\":\"Nombre\",\r\n                    \"Respuesta\":\"Byron David\"\r\n                    },\r\n                {\r\n                \"NombreCampo\":\"DPI\",\r\n                \"Respuesta\":\"123123123\"\r\n                }\r\n            ]\r\n    \r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://localhost:44398/api/user/nuevarespuesta",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "44398",
+					"path": [
+						"api",
+						"user",
+						"nuevarespuesta"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "ObtenerEncuesta",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCIsImN0eSI6IkpXVCJ9.eyJodHRwOi8vc2NoZW1hcy54bWxzb2FwLm9yZy93cy8yMDA1LzA1L2lkZW50aXR5L2NsYWltcy9uYW1laWRlbnRpZmllciI6IkRldmVsIiwiZXhwIjoxNjUzMzQ0OTU5LCJpc3MiOiJodHRwczovL2xvY2FsaG9zdDo0NDM5OC8iLCJhdWQiOiJodHRwczovL2xvY2FsaG9zdDo0NDM5OC8ifQ.1rxwmAUIQI2VyZPD8PVXGLs6OV4sVmNra_W59ofHJN8",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n\r\n    \"Nombre\":\"Encuesta 12\"\r\n   \r\n    \r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://localhost:44398/api/user/obtenerEncuesta",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "44398",
+					"path": [
+						"api",
+						"user",
+						"obtenerEncuesta"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "ObtenerRespuestas",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCIsImN0eSI6IkpXVCJ9.eyJodHRwOi8vc2NoZW1hcy54bWxzb2FwLm9yZy93cy8yMDA1LzA1L2lkZW50aXR5L2NsYWltcy9uYW1laWRlbnRpZmllciI6IkRldmVsIiwiZXhwIjoxNjUzMzQ0OTU5LCJpc3MiOiJodHRwczovL2xvY2FsaG9zdDo0NDM5OC8iLCJhdWQiOiJodHRwczovL2xvY2FsaG9zdDo0NDM5OC8ifQ.1rxwmAUIQI2VyZPD8PVXGLs6OV4sVmNra_W59ofHJN8",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n\r\n    \"Nombre\":\"Encuesta 12\"\r\n   \r\n    \r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://localhost:44398/api/user/obtenerresultados",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "44398",
+					"path": [
+						"api",
+						"user",
+						"obtenerresultados"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
